@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JS</title>
+    <style>
+        body{
+            background-color: rgb(18, 69, 136);
+        }
+        h1{
+            text-align: center;
+            color:rgb(255, 255, 255);
+        }
+
+        main{
+
+        }
+        main > article{
+            background-color: white;
+            min-width: 300px;
+            max-width: 500px;
+            border-radius: 5px;
+            box-shadow:0px 0px 4px black ;
+            margin: auto;  
+            padding: 10px;
+        }
+        article > p {
+            padding-top: 10px;
+            text-align: center;
+            font:normal 1.2em arial, helvetica;
+        }
+        article > div {
+            margin: auto;
+
+        }
+        div#sexos{
+            padding: 5px;
+        }
+
+        #botao{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+        <main>
+            <article>
+                Ano de nascimento: <input type="number" name="ano" id="ano" min="0">
+                <div id="sexos">
+                    <span>Sexo: </span>
+                    <input type="radio" name="masc" id="masc" checked>
+                    <label for="masc">Masculino</label>
+                   <input type="radio" name="fem" id="fem">
+                   <label for="fem">Feminino</label>
+                    <div id="botao">
+                        <input type="button" value="Verificar" onclick="verificar()">
+                        <p id="res">Preencha os dados acima para ver o resultado</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+    <script>
+        function verificar(){
+        var data = new Date()
+        var ano = data.getFullYear()    
+        var fano = document.querySelector('input#ano')
+        var masc = document.querySelector('input#masc')
+        var fem = document.querySelector('input#fem')
+        var res = document.querySelector('p#res')
+            if(fano.value.length == 0 || fano.value > ano)
+            window.alert('Verifique os dados e tente novamente')
+    } 
+    </script>
+</body>
+</html>
