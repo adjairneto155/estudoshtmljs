@@ -5,6 +5,6 @@ if(n%2 == 0){
     return 'Impar'
 }
 }
-var res = parimpar(4)
+var res = parimpar(5)
 console.log(res)
 
